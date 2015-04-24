@@ -1,0 +1,33 @@
+<template name="MasterLayout">
+    <div class="container">
+        <div class="row">
+            <div class="loginButtons">
+                {{#if currentUser}}
+
+                    <img id="pic" src="{{picURL}}" />
+
+                {{/if}}
+                {{> loginButtons}}
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home</a>
+                    <span class="divider">/</span>
+                </li>
+                {{> yield "breadcrumbs"}}
+            </ul>
+
+
+        </div>
+
+        <div class="row">
+            {{> yield}}
+        </div>
+    </div>
+
+</template>
